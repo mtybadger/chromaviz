@@ -1,4 +1,5 @@
 LICENSE
+MANIFEST.in
 README.md
 pyproject.toml
 setup.cfg
@@ -11,4 +12,3 @@ chromaviz.egg-info/dependency_links.txt
 chromaviz.egg-info/requires.txt
 chromaviz.egg-info/top_level.txt
 chromaviz.egg-info/zip-safe
-chromaviz/static/index.html

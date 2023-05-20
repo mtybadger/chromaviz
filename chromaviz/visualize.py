@@ -9,17 +9,42 @@ import pandas as pd
 from sklearn.decomposition import PCA
 from sklearn.manifold import TSNE
 import webbrowser
-app = Flask(__name__, static_url_path='/static')
+
+import importlib.resources
+        
+app = Flask(__name__)
 CORS(app)
 
 from flask import cli
+from flask import Response
+from flask import request
 cli.show_server_banner = lambda *_: None
 
 data = [[]]
 
+
+
 @app.route("/")
 def hello_world():
-    return send_file("./static/index.html")
+    with importlib.resources.open_text("chromaviz", "index.html") as file:
+            contents = file.read()
+            return contents
+
+@app.route('/assets/<path:filename>')
+def serve_assets(filename):
+
+    mime = 'text/html'
+
+    if(".js" in filename):
+         mime = 'text/javascript'
+    if('.css' in filename):
+        mime = 'text/css'
+    # Logic to serve the assets
+    # Here, you can use the `filename` parameter to determine which asset to serve
+    # You can use the `url_for` function to generate the URL for the asset dynamically
+    with importlib.resources.open_text("chromaviz", filename) as file:
+            contents = file.read()
+            return Response(contents, mimetype=mime)
 
 @app.route("/data")
 def data_api():

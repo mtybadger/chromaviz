@@ -5,7 +5,7 @@ import setuptools
 if __name__ == "__main__":
     setuptools.setup(
         name="chromaviz",
-        version="0.0.2",
+        version="0.0.4",
         url="https://github.com/mtybadger/chromaviz",
         author="Spruce Campbell",
         author_email="spruce@mit.edu",
@@ -14,7 +14,6 @@ if __name__ == "__main__":
         packages=setuptools.find_packages(),
         install_requires=["chromadb", "flask", "flask-cors", "numpy", "pandas", "scikit-learn"],
         include_package_data=True,
-        package_data={'': ['static/*']},
         classifiers=[
             'Programming Language :: Python',
             'Programming Language :: Python :: 3',
