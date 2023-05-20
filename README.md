@@ -1,8 +1,8 @@
 # ChromaViz
 
-A package for visualising vector embedding collections as part of the [Chroma](trychroma.com) vector database. 
+A package for visualising vector embedding collections as part of the [Chroma](https://trychroma.com) vector database. 
 
-Uses [Flask](https://flask.palletsprojects.com/en/2.3.x/), [Vite](vitejs.dev), and [react-three-fiber](https://github.com/pmndrs/react-three-fiber) to host a live 3D view of the data in the webpage, should perform well up to 10k+ documents. Dimensional reduction is performed using PCA for colors down to 50 dimensions, followed by tSNE down to 3.
+Uses [Flask](https://flask.palletsprojects.com/en/2.3.x/), [Vite](https://vitejs.dev), and [react-three-fiber](https://github.com/pmndrs/react-three-fiber) to host a live 3D view of the data in a web browser, should perform well up to 10k+ documents. Dimensional reduction is performed using PCA for colors down to 50 dimensions, followed by tSNE down to 3.
 
 ## How to Use
 `pip install chromaviz` or `pip install git+https://github.com/mtybadger/chromaviz/`.
