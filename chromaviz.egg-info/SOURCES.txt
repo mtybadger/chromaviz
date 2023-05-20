@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+chromaviz/__init__.py
+chromaviz/visualize.py
+chromaviz.egg-info/PKG-INFO
+chromaviz.egg-info/SOURCES.txt
+chromaviz.egg-info/dependency_links.txt
+chromaviz.egg-info/requires.txt
+chromaviz.egg-info/top_level.txt
+chromaviz.egg-info/zip-safe

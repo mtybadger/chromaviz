@@ -1,0 +1,6 @@
+chromadb
+flask
+flask-cors
+numpy
+pandas
+sklearn
