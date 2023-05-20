@@ -1,13 +1,13 @@
 Metadata-Version: 2.1
 Name: chromaviz
-Version: 0.0.1
+Version: 0.0.2
 Summary: A package for visualising Chroma vector collections in 3D
 Home-page: https://github.com/mtybadger/chromaviz
 Author: Spruce Campbell
 Author-email: Spruce Campbell <spruce@mit.edu>
 License: MIT License
-Project-URL: Homepage, https://github.com/pypa/sampleproject
-Project-URL: Bug Tracker, https://github.com/pypa/sampleproject/issues
+Project-URL: Homepage, https://github.com/mtybadger/chromaviz
+Project-URL: Bug Tracker, https://github.com/mtybadger/chromaviz/issues
 Keywords: example,setuptools
 Classifier: Programming Language :: Python :: 3
 Classifier: License :: OSI Approved :: MIT License
