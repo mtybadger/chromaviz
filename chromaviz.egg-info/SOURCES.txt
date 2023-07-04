@@ -6,8 +6,8 @@ setup.cfg
 setup.py
 chromaviz/__init__.py
 chromaviz/glasses-5d966a6f.svg
+chromaviz/index-0202568a.js
 chromaviz/index-26d05a53.css
-chromaviz/index-8146af32.js
 chromaviz/index.html
 chromaviz/visualize.py
 chromaviz.egg-info/PKG-INFO

@@ -1,4 +1,5 @@
 
+import { Tooltip as ReactTooltip } from 'react-tooltip'
 
 const Tooltip = ({tip, settings}) => {
 
@@ -18,11 +19,11 @@ const Tooltip = ({tip, settings}) => {
         }
       };
 
-    return (<div style={{ pointerEvents: 'none', width: "25vw", padding: "5px", margin: 0, listStyleType: "none", backgroundColor: "rgba(255,255,255,0.9)", borderRadius: "5px", wordWrap: "break-word" }}>
+    return (<div style={{ pointerEvents: 'none', width: "25vw", padding: "5px", margin: 0, listStyleType: "none", backgroundColor: "grey", borderRadius: "5px", wordWrap: "break-word" }}>
     <><span><strong>id: </strong></span></>
     {renderList(tip.id)}
     {settings[0].showDocuments && <><br></br><span><strong>document:</strong></span></>}
-    {settings[0].showDocuments && (renderList(tip.document))}
+    {settings[0].showDocuments && (renderList(tip.document.substr(500, 550)))}
     {settings[0].showMetadata && <><br></br><span><strong>metadata:</strong></span></>}
     {settings[0].showMetadata && <div style={{marginLeft: "1em"}}>{(renderList(tip.metadata))}</div>}
   </div>)

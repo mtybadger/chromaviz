@@ -1,4 +1,5 @@
 import chromadb
+from chromadb.config import Settings
 from flask import Flask
 from flask import send_file
 from flask_cors import CORS
@@ -22,7 +23,8 @@ cli.show_server_banner = lambda *_: None
 
 data = [[]]
 
-
+chromadb_settings = Settings(anonymized_telemetry=False, persist_directory="./chroma", chroma_db_impl="duckdb+parquet")
+client = chromadb.Client(chromadb_settings)
 
 @app.route("/")
 def hello_world():
@@ -46,7 +48,13 @@ def serve_assets(filename):
             contents = file.read()
             return Response(contents, mimetype=mime)
 
-@app.route("/data")
+@app.route("/import-data", methods=["POST"])
+def import_data_api():
+     global data
+     data = json.loads(request.data)
+     return '', 204
+
+@app.route("/data", methods=["GET"])
 def data_api():
     df = pd.DataFrame.from_dict(data=data["embeddings"])
     print(df)
@@ -83,11 +91,9 @@ def data_api():
         points.append(point)
     return json.dumps({'points': points})
 
-client = chromadb.Client()
-
-def visualize_collection(col: chromadb.api.models.Collection.Collection):
+def visualize_collection(col: chromadb.api.models.Collection.Collection, port: int = 5000):
     global data
     data = col.get(include=["documents", "metadatas", "embeddings"])
-    webbrowser.open('http://127.0.0.1:5000')   
-    app.run(port=5000, debug=False)
+    webbrowser.open(f"http://127.0.0.1:{str(port)}")
+    app.run(port=port, debug=False)
     return

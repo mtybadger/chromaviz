@@ -1,8 +1,4 @@
-include chromaviz/glasses-5d966a6f.svg
-include chromaviz/index-26d05a53.css
-include chromaviz/index-8146af32.js
+include chromaviz/*.svg
+include chromaviz/*.css
+include chromaviz/*.js
 include chromaviz/index.html
-include /chromaviz/glasses-5d966a6f.svg
-include /chromaviz/index-26d05a53.css
-include /chromaviz/index-8146af32.js
-include /chromaviz/index.html
