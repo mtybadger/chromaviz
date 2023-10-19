@@ -5,7 +5,7 @@ import setuptools
 if __name__ == "__main__":
     setuptools.setup(
         name="chromaviz",
-        version="0.0.4",
+        version="0.0.5",
         url="https://github.com/mtybadger/chromaviz",
         author="Spruce Campbell",
         author_email="spruce@mit.edu",
