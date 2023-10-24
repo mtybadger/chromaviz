@@ -1,7 +1,5 @@
 import chromadb
-from chromadb.config import Settings
 from flask import Flask
-from flask import send_file
 from flask_cors import CORS
 import time
 import json
@@ -22,9 +20,6 @@ from flask import request
 cli.show_server_banner = lambda *_: None
 
 data = [[]]
-
-chromadb_settings = Settings(anonymized_telemetry=False, persist_directory="./chroma", chroma_db_impl="duckdb+parquet")
-client = chromadb.Client(chromadb_settings)
 
 @app.route("/")
 def hello_world():
