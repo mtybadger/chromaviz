@@ -10,7 +10,7 @@ from sklearn.manifold import TSNE
 import webbrowser
 
 import importlib.resources
-        
+
 app = Flask(__name__)
 CORS(app)
 
@@ -54,7 +54,7 @@ def data_api():
     df = pd.DataFrame.from_dict(data=data["embeddings"])
     print(df)
     print('Size of the dataframe: {}'.format(df.shape))
-    
+
     pca_50 = PCA(n_components=50)
     pca_result_50 = pca_50.fit_transform(df)
 
@@ -86,9 +86,12 @@ def data_api():
         points.append(point)
     return json.dumps({'points': points})
 
-def visualize_collection(col: chromadb.api.models.Collection.Collection, port: int = 5000):
+def visualize_collection(col: chromadb.api.models.Collection.Collection, port: int = 5000, host: str = "127.0.0.1", open_browser: bool = True):
     global data
     data = col.get(include=["documents", "metadatas", "embeddings"])
-    webbrowser.open(f"http://127.0.0.1:{str(port)}")
-    app.run(port=port, debug=False)
+
+    if open_browser:
+        webbrowser.open(f"http://127.0.0.1:{str(port)}")
+
+    app.run(host=host, port=port, debug=False)
     return
