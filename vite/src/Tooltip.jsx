@@ -23,7 +23,7 @@ const Tooltip = ({tip, settings}) => {
     <><span><strong>id: </strong></span></>
     {renderList(tip.id)}
     {settings[0].showDocuments && <><br></br><span><strong>document:</strong></span></>}
-    {settings[0].showDocuments && (renderList(tip.document.substr(0, 50)))}
+    {settings[0].showDocuments && (renderList(tip.document))}
     {settings[0].showMetadata && <><br></br><span><strong>metadata:</strong></span></>}
     {settings[0].showMetadata && <div style={{marginLeft: "1em"}}>{(renderList(tip.metadata))}</div>}
   </div>)
