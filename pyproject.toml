@@ -20,3 +20,5 @@ classifiers = [
 [project.urls]
 "Homepage" = "https://github.com/mtybadger/chromaviz"
 "Bug Tracker" = "https://github.com/mtybadger/chromaviz/issues"
+
+dependencies = ['chromadb', 'flask', 'flask-cors', 'numpy', 'pandas', 'scikit-learn']
