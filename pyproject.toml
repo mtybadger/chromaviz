@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=61.0"]
+requires = ["setuptools==68.2.2"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -20,3 +20,5 @@ classifiers = [
 [project.urls]
 "Homepage" = "https://github.com/mtybadger/chromaviz"
 "Bug Tracker" = "https://github.com/mtybadger/chromaviz/issues"
+
+dependencies = ['chromadb', 'flask', 'flask-cors', 'numpy', 'pandas', 'scikit-learn']
